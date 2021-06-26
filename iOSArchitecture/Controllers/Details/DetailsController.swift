@@ -37,6 +37,11 @@ class DetailsController: BaseController, StoryboardInitializable {
         self.viewModel.observeQuery()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.viewModel.stopObserving()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

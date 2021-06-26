@@ -1,6 +1,6 @@
 # iOSArchitecture
 
-[![Version](https://img.shields.io/badge/Version-0.1.0-brightgreen.svg)](https://github.com/zelin/iOSArchitecture)
+[![Version](https://img.shields.io/badge/Version-0.0.1-brightgreen.svg)](https://github.com/zelin/iOSArchitecture)
 [![Platform](https://img.shields.io/badge/Platform-iPhone-orange.svg)](https://github.com/zelin/iOSArchitecture)
 [![License](https://img.shields.io/badge/License-MIT-black.svg)](https://github.com/zelin/iOSArchitecture)
 
@@ -51,6 +51,13 @@ For dependency injection, a lightweight library Resolver (https://github.com/hml
 ⚙️ A tool to enforce Swift style and conventions, loosely based on the now archived GitHub Swift Style Guide. SwiftLint enforces the style guide rules that are generally accepted by the Swift community. These rules are well described in popular style guides like Ray Wenderlich's Swift Style Guide.
 
 Swiftlint is available at (https://github.com/realm/SwiftLint).
+
+### Memory Management
+
+Optimized the code for no memory leaks and low memory usage.
+
+![Screenshot 1](./Screenshots/leaks.png)
+
 
 ## Author
 

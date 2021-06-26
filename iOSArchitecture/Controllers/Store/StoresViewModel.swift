@@ -22,11 +22,7 @@ class StoresViewModel: BaseViewModel {
     fileprivate var storeRef: Query?
     fileprivate var storeListener : ListenerRegistration?
 
-    var storesList : [StoreModel] = [] {
-        didSet {
-            didChangeData?(storesList, nil)
-        }
-    }
+    var storesList : [StoreModel] = []
     
     override init() {
         super.init()

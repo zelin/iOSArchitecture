@@ -30,7 +30,7 @@ class StoresController: BaseController, StoryboardInitializable {
         super.viewDidLoad()
                 
         /// For loading
-        self.noRecordImg.isHidden = false
+        self.noRecordImg.isHidden = true
         self.storesTableView.isUserInteractionEnabled = false
 
         /// Adding delegate functions to table view
@@ -81,7 +81,7 @@ class StoresController: BaseController, StoryboardInitializable {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        /// Incase we call startObserving in viewDidLoad, we don't need to call it as deinit is already in place in viewModel
+        /// Incase we call startObserving in viewDidLoad, we need to call it will retain the listener making causing memory leaks in viewmodel
         self.viewModel.stopObserving()
     }
 }

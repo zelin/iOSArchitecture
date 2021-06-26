@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0B20C24F-40C5-4409-BB83-1F86C9221C19"
+            uuid = "EA091A73-9AE7-4B5B-850E-73410BC6F471"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOSArchitecture/Controllers/Details/DetailsController.swift"
+            filePath = "iOSArchitecture/Controllers/Details/DetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "openStoreBtnPressed(_:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "deinit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "88AB88E1-3D53-42C8-ADB3-C37912736763"
+            uuid = "ED453EE1-C6ED-4FE5-8AAE-0513FF6D97A5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOSArchitecture/Controllers/Details/DetailsController.swift"
+            filePath = "iOSArchitecture/Controllers/Details/DetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "openStoreBtnPressed(_:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "observeQuery()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
