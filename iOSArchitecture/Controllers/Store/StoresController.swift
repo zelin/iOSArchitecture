@@ -11,22 +11,21 @@ import MBProgressHUD
 import Foundation
 import SkeletonView
 
-class StoresController: BaseController, StoryboardInitializable
-{
+class StoresController: BaseController, StoryboardInitializable {
     /// StoryboardInitializable protocol will search the view controller with identifier same as class name in storyboard name defined in the function.
     static func storyboardName() -> String {
         return "Stores"
     }
     
     /// Both Coordinator and view models are initialized by MVVM+Coordinator pattern
-    var coordinator : StoresCoordinator!
-    var viewModel : StoresViewModel!
+    var coordinator: StoresCoordinator!
+    var viewModel: StoresViewModel!
     
     /// If there is no code path that re-adds the outlet to the view hierarchy, it would also be good to make it weak to not hold on to it unnecessarily when it gets removed:
-    @IBOutlet weak var storesTableView : UITableView!
-    @IBOutlet weak var noRecordImg   : UIImageView!
+    @IBOutlet weak var storesTableView: UITableView!
+    @IBOutlet weak var noRecordImg: UIImageView!
 
-    // MARK:- LifeCycle Functions    
+// MARK: - LifeCycle Functions    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -50,10 +49,10 @@ class StoresController: BaseController, StoryboardInitializable
             }
             
             /// Incase no stores we will display no records found image
-            if stores.count > 0 {
+            if !stores.isEmpty {
                 strongSelf.storesTableView.isHidden = false
                 strongSelf.noRecordImg.isHidden = true
-            }else{
+            } else {
                 strongSelf.storesTableView.isHidden = true
                 strongSelf.noRecordImg.isHidden = false
             }
@@ -68,7 +67,7 @@ class StoresController: BaseController, StoryboardInitializable
 
             if state == .loading {
                 MBProgressHUD.showAdded(to: strongSelf.view, animated: true)
-            }else if state == .idle {
+            } else if state == .idle {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
                 strongSelf.storesTableView.isUserInteractionEnabled = true
             }
@@ -87,7 +86,7 @@ class StoresController: BaseController, StoryboardInitializable
     }
 }
 
-// MARK:- UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension StoresController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,7 +113,7 @@ extension StoresController: UITableViewDataSource {
     }
 }
 
-//MARK:- UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension StoresController: UITableViewDelegate {
      
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

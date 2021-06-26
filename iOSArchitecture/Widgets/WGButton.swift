@@ -11,9 +11,7 @@ import UIKit
 import QuartzCore
 
 @IBDesignable
-class WGButton: UIButton
-{
-    
+class WGButton: UIButton {
 }
 
 extension WGButton {

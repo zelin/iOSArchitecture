@@ -17,8 +17,8 @@ enum State {
 
 class BaseViewModel {
     
-    @Injected var service : Service
-    var state : State = .idle
+    @Injected var service: Service
+    var state: State = .idle
     
     var mainDB = Firestore.firestore()
     var updateState: ((State) -> Void)?

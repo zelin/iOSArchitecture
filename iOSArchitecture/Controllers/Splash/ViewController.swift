@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         /// Incase any changes happen to Logged In User Model. This should be called once ideally once a user is logged in
-        self.service.observeUser { (user, error) -> Void in
+        self.service.observeUser { (_, _) -> Void in
         }
         
         /// Lets put some more delay on splash
@@ -33,4 +33,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

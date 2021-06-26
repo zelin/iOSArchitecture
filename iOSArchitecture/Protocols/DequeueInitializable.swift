@@ -15,7 +15,7 @@ protocol DequeueInitializable {
     static var nib: UINib { get }
 }
 
-//MARK:- UITableViewCell
+// MARK: - UITableViewCell
 extension DequeueInitializable where Self: UITableViewCell {
     
     static var reuseableIdentifier: String {
@@ -33,12 +33,12 @@ extension DequeueInitializable where Self: UITableViewCell {
         return cell as! Self
     }
     
-    static func register(tableView: UITableView){
+    static func register(tableView: UITableView) {
         tableView.register(self.nib, forCellReuseIdentifier: self.reuseableIdentifier)
     }
 }
 
-//MARK:- UICollectionViewCell
+// MARK: - UICollectionViewCell
 extension DequeueInitializable where Self: UICollectionViewCell {
     
     static var reuseableIdentifier: String {
@@ -49,7 +49,7 @@ extension DequeueInitializable where Self: UICollectionViewCell {
         return UINib(nibName: reuseableIdentifier, bundle: nil)
     }
     
-    static func dequeue(collectionView: UICollectionView,indexPath: IndexPath) -> Self {
+    static func dequeue(collectionView: UICollectionView, indexPath: IndexPath) -> Self {
         
        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseableIdentifier, for: indexPath)
         

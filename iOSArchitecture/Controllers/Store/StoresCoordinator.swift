@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class StoresCoordinator : Coordinator {
+class StoresCoordinator: Coordinator {
     
     var parentCoordinator: Coordinator?
     var childCoordinators: [Coordinator] = []
@@ -48,11 +48,9 @@ class StoresCoordinator : Coordinator {
             return
         }
         
-        for (index, coordinator) in childCoordinators.enumerated() {
-            if coordinator === child {
-                childCoordinators.remove(at: index)
-                break
-            }
+        for (index, coordinator) in childCoordinators.enumerated() where coordinator === child {
+            childCoordinators.remove(at: index)
+            break            
         }
     }
 }

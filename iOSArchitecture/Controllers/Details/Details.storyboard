@@ -45,13 +45,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Sunmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcD-7F-veN">
-                                        <rect key="frame" x="82" y="13" width="91.5" height="21"/>
+                                        <rect key="frame" x="82" y="13" width="104.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the best Coffee ever! try us and enjoy!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-8k-5t7">
-                                        <rect key="frame" x="82" y="36" width="150" height="36"/>
+                                        <rect key="frame" x="82" y="40.5" width="150" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="DXH-p1-iut"/>
                                         </constraints>
@@ -88,7 +88,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="openStoreBtnPressedWith_btn:" destination="UgC-hl-Fjv" eventType="touchUpInside" id="Cin-Tk-NqE"/>
+                                    <action selector="openStoreBtnPressed:" destination="UgC-hl-Fjv" eventType="touchUpInside" id="woO-1p-3hS"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-S9-YVK">
@@ -105,7 +105,7 @@
                                             <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
-                                            <action selector="backBtnPressedWith_btn:" destination="UgC-hl-Fjv" eventType="touchUpInside" id="xkF-71-TJw"/>
+                                            <action selector="backBtnPressed:" destination="UgC-hl-Fjv" eventType="touchUpInside" id="k6t-og-WbO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vfv-7O-kFi" customClass="WGView" customModule="iOSArchitecture" customModuleProvider="target">
@@ -159,7 +159,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liT-rs-jir">
-                                <rect key="frame" x="20" y="457" width="71.5" height="25.5"/>
+                                <rect key="frame" x="20" y="457" width="83" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HighlightCell" id="jD8-KN-n80" customClass="HighlightCell" customModule="Linko" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HighlightCell" id="jD8-KN-n80" customClass="HighlightCell" customModule="iOSArchitecture" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="13.5" width="185" height="257"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bF3-Wy-7h6">
@@ -261,6 +261,11 @@
             <point key="canvasLocation" x="605.79710144927537" y="-87.723214285714278"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ogm-xz-OSs">
+            <size key="intrinsicContentSize" width="105" height="23"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="ic_bag" width="16" height="21.5"/>

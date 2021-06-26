@@ -15,7 +15,7 @@ class HighlightCell: UICollectionViewCell, DequeueInitializable {
     @IBOutlet weak var imgView : UIImageView!
     @IBOutlet weak var mainView : WGView!
     
-    func setup(url: String?)  {
+    func setup(url: String?) {
 
         guard let mainUrl = url else {
             return
@@ -28,7 +28,7 @@ class HighlightCell: UICollectionViewCell, DequeueInitializable {
         mainView.cornerRadius = 10
         imgView.contentMode = .scaleAspectFill
         
-        imgView.sd_setImage(with: URL.init(string: mainUrl)!) { img, Error, type, url in
+        imgView.sd_setImage(with: URL.init(string: mainUrl)!) { _, _, _, _ in
             self.imgView.hideSkeleton()
         }
     }

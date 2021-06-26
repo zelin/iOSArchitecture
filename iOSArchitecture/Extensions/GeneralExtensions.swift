@@ -8,8 +8,7 @@
 
 import Foundation
 
-extension Encodable
-{
+extension Encodable {
     func asDictionary() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
         guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
@@ -21,7 +20,7 @@ extension Encodable
 
 extension Decodable {
   /// Initialize from JSON Dictionary. Return nil on failure
-    init?(dictionary value: [String:Any]){
+    init?(dictionary value: [String:Any]) {
 
         guard JSONSerialization.isValidJSONObject(value) else { return nil }
         guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else { return nil }
@@ -33,7 +32,8 @@ extension Decodable {
 
 extension Date {
     static var yesterday: Date { return Date().dayBefore }
-    static var tomorrow:  Date { return Date().dayAfter }
+    static var tomorrow: Date { return Date().dayAfter }
+    
     var dayBefore: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
     }
@@ -44,7 +44,7 @@ extension Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     var month: Int {
-        return Calendar.current.component(.month,  from: self)
+        return Calendar.current.component(.month, from: self)
     }
     var isLastDayOfMonth: Bool {
         return dayAfter.month != month
@@ -55,7 +55,7 @@ extension String {
     
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: self)
     }
     
@@ -63,4 +63,3 @@ extension String {
         return Int(self) != nil
     }
 }
-

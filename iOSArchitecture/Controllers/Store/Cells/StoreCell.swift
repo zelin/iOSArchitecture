@@ -26,7 +26,7 @@ class StoreCell : UITableViewCell, DequeueInitializable {
         self.showAnimatedGradientSkeleton()
     }
     
-    func update(store: StoreModel){
+    func update(store: StoreModel) {
                 
         self.store = store
         self.selectionStyle = .none
@@ -43,7 +43,7 @@ class StoreCell : UITableViewCell, DequeueInitializable {
         }
         
         if let bgImageUrl = store.bgImageUrl {
-            storeImg.sd_setImage(with: URL.init(string: bgImageUrl)) { image, error, cache, url in
+            storeImg.sd_setImage(with: URL.init(string: bgImageUrl)) { _, _, _, _ in
                 self.hideSkeleton()
             }
         } else {

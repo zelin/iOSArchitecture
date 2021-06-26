@@ -24,10 +24,10 @@ struct UserModel: Codable {
     var status : Bool?
     var rating : Float?
 
-    /// Getter for bookmarks is public, but the setter is private
+/// Getter for bookmarks is public, but the setter is private
     public private(set) var bookmarks : [String]?
 
-    ///classes are reference type whereas structures and enumerations are value types. The properties of value types cannot be modified within its instance methods by default. In order to modify the properties of a value type, you have to use the mutating keyword in the instance method
+/// Classes are reference type whereas structures and enumerations are value types. The properties of value types cannot be modified within its instance methods by default. In order to modify the properties of a value type, you have to use the mutating keyword in the instance method
     mutating func updateValues() {
         self.deviceType  = "iOS"
         self.deviceModel = UIDevice.current.systemVersion + " " + UIDevice.current.systemName
@@ -35,7 +35,8 @@ struct UserModel: Codable {
     
     mutating func addBookmark(key: String) {
         
-        if (bookmarks == nil) {
+        if self.bookmarks != nil {
+        } else {
             self.bookmarks = []
         }
         

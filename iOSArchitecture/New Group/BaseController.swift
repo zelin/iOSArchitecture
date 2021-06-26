@@ -11,9 +11,9 @@ import UIKit
 
 class BaseController: UIViewController {
     
-    let app : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let app : AppDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate.init()
         
-    // MARK:- LifeCycle Functions
+// MARK: - LifeCycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -18,19 +18,19 @@ class DetailsController: BaseController, StoryboardInitializable {
     }
     
     var coordinator : DetailsCoordinator!
-    var viewModel : DetailsViewModel!{
+    var viewModel : DetailsViewModel! {
         didSet {
         }
     }
 
-    @IBOutlet private weak var imagesColView : UICollectionView!
+    @IBOutlet private weak var imagesColView: UICollectionView!
 
-    @IBOutlet private weak var storeBgImg     : UIImageView!
-    @IBOutlet private weak var storeLogoImg   : UIImageView!
+    @IBOutlet private weak var storeBgImg:      UIImageView!
+    @IBOutlet private weak var storeLogoImg:    UIImageView!
 
-    @IBOutlet private weak var nameLbl     : UILabel!
-    @IBOutlet private weak var detailLbl   : UILabel!
-    @IBOutlet private weak var ratingLbl   : UILabel!
+    @IBOutlet private weak var nameLbl:     UILabel!
+    @IBOutlet private weak var detailLbl:   UILabel!
+    @IBOutlet private weak var ratingLbl:   UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,28 +61,27 @@ class DetailsController: BaseController, StoryboardInitializable {
 
             if state == .loading {
                 MBProgressHUD.showAdded(to: strongSelf.view, animated: true)
-            }else if state == .idle {
+            } else if state == .idle {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
             }
         }
     }
     
-    func updateData(store: StoreModel)
-    {
+    func updateData(store: StoreModel) {
         self.nameLbl.text = store.name
         self.detailLbl.text = store.details
         
-        if let logo = store.logoUrl{
+        if let logo = store.logoUrl {
             self.storeLogoImg.sd_setImage(with: URL.init(string: logo), completed: nil)
         }
 
-        if let bgUrl = store.bgImageUrl{
+        if let bgUrl = store.bgImageUrl {
             self.storeBgImg.sd_setImage(with: URL.init(string: bgUrl), completed: nil)
         }
         
         if let rating = store.rating {
             self.ratingLbl.text = String.init(format: "%.1f", rating)
-        }else{
+        } else {
             self.ratingLbl.text = "0.0"
         }
         
@@ -90,25 +89,25 @@ class DetailsController: BaseController, StoryboardInitializable {
         
     }
     
-    // MARK:- IBActions
-    @IBAction func backBtnPressed(_btn: UIButton) {
+// MARK: - IBActions
+    @IBAction func backBtnPressed(_: UIButton) {
         coordinator?.popViewController()
     }
     
-    @IBAction func openStoreBtnPressed(_btn: UIButton) {
+    @IBAction func openStoreBtnPressed(_: UIButton) {
         
         guard let webUrl = self.viewModel.store.webUrl else {
             return
         }
         
         let url = URL(string:webUrl)!
-        if UIApplication.shared.canOpenURL(url){            
+        if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }
 
-//MARK:- UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 extension DetailsController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -132,7 +131,7 @@ extension DetailsController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//MARK:- UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 extension DetailsController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

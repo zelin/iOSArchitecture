@@ -10,7 +10,7 @@ import Resolver
 import Foundation
 import FirebaseFirestore
 
-class DetailsViewModel : BaseViewModel {
+class DetailsViewModel: BaseViewModel {
     
     @Injected
     fileprivate var storeRepo   : StoreRepository
@@ -35,7 +35,7 @@ class DetailsViewModel : BaseViewModel {
         guard let query = storeRef else { return }
         
         self.storeListener?.remove()
-        self.storeListener = storeRepo.get(ref: query, completionHandler: { (store, error) in
+        self.storeListener = storeRepo.get(ref: query, completionHandler: { (store, _) in
             if let storeData = store {
                 self.store = storeData
                 self.didChangeData?(self.store)

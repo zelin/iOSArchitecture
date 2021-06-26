@@ -10,7 +10,7 @@ import Resolver
 import Foundation
 import FirebaseFirestore
 
-class StoresViewModel : BaseViewModel {
+class StoresViewModel: BaseViewModel {
     
     @Injected
     fileprivate var storeRepo   : StoreRepository
@@ -23,7 +23,7 @@ class StoresViewModel : BaseViewModel {
     fileprivate var storeListener : ListenerRegistration?
 
     var storesList : [StoreModel] = [] {
-        didSet{
+        didSet {
             didChangeData?(storesList, nil)
         }
     }
@@ -35,7 +35,7 @@ class StoresViewModel : BaseViewModel {
     func startObserving() {
         
         /// Incase any changes happen to Logged In User Model. Unlike observe, this should be placed wherever
-        self.service.didChangeData =  { [weak self] user in
+        self.service.didChangeData = { [weak self] _ in
             guard let strongSelf = self else { return }
             /// Use-case to pass values to view controllers that display user properties e.g ProfileController
             strongSelf.didChangeData?(strongSelf.storesList, nil)

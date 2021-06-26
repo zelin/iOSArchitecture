@@ -14,7 +14,7 @@ enum RepositoryError: Error {
     case failure
 }
 
-///Repositories are beneficial because they are implementation-independent contracts for accessing your backend . a repository can be implemented with a local database or as a web service, but the protocol for the repository doesn’t change. so if you switch backends, Best use case is to have local access and backend access is required
+/// Repositories are beneficial because they are implementation-independent contracts for accessing your backend . a repository can be implemented with a local database or as a web service, but the protocol for the repository doesn’t change. so if you switch backends, Best use case is to have local access and backend access is required
 protocol Repository {
     
     associatedtype T

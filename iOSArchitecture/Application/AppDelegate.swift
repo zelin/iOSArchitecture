@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// We will sign out in case defaults are not synced.
         if !UserDefaults.isUserLoggedIn {
-            do{
+            do {
                 try Auth.auth().signOut()
-            }catch _{
+            } catch _ {
             }
         }
         
@@ -42,4 +42,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-

@@ -19,8 +19,8 @@ enum Datasets {
 /// Base network class to listen for logged in user updates
 class Service {
         
-    public private(set) var user : UserModel?
-    fileprivate var listener : ListenerRegistration?
+    public private(set) var user: UserModel?
+    fileprivate var listener: ListenerRegistration?
 
     var didChangeData: ((UserModel?) -> Void)?
 

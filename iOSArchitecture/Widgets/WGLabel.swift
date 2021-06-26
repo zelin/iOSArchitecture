@@ -11,8 +11,8 @@ import UIKit
 import QuartzCore
 
 @IBDesignable
-class WGLabel: UILabel
-{
+class WGLabel: UILabel {
+    
     let topInset = CGFloat(0), bottomInset = CGFloat(0), leftInset = CGFloat(2.0), rightInset = CGFloat(2.0)
     
     override func drawText(in rect: CGRect) {        
@@ -32,42 +32,42 @@ class WGLabel: UILabel
         }
     }
     
-    @IBInspectable var strokeColor : UIColor     = UIColor.clear {
+    @IBInspectable var strokeColor: UIColor     = UIColor.clear {
         didSet {
             self.layer.borderColor = self.strokeColor.cgColor
         }
     }
 
-    @IBInspectable var leftRoundedCorner : Bool          = false {
+    @IBInspectable var leftRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
     
-    @IBInspectable var rightRoundedCorner       : Bool          = false{
+    @IBInspectable var rightRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
-    @IBInspectable var bottomLeftRoundedCorner  : Bool          = false{
+    @IBInspectable var bottomLeftRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
-    @IBInspectable var bottomRightRoundedCorner : Bool          = false{
+    @IBInspectable var bottomRightRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
 
-    @IBInspectable var cornerRadius : CGFloat   = 0{
+    @IBInspectable var cornerRadius: CGFloat   = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             addMaskedCorners()
         }
     }
     
-    @IBInspectable var shadow : CGFloat   = 0 {
+    @IBInspectable var shadow: CGFloat   = 0 {
         didSet {
             self.layer.shadowRadius = shadow
             self.layer.shadowColor = UIColor.gray.cgColor
@@ -91,14 +91,11 @@ class WGLabel: UILabel
             mask.insert(.layerMinXMaxYCorner)
         }
         
-        
         if bottomRightRoundedCorner {
             mask.insert(.layerMaxXMaxYCorner)
         }
         
-        if mask.isEmpty{
-            //self.layer.maskedCorners = nil
-        }else{
+        if !mask.isEmpty {
             self.layer.maskedCorners = mask
         }
     }

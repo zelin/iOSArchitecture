@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 import QuartzCore
 
-@IBDesignable class WGView : UIView
-{
+@IBDesignable class WGView: UIView {
     /* Initial fillColor used to create star lobes */
     @IBInspectable var fillColor : UIColor       =  UIColor.white {
         didSet {
@@ -31,36 +30,36 @@ import QuartzCore
         }
     }
 
-    @IBInspectable var leftRoundedCorner : Bool          = false {
+    @IBInspectable var leftRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
     
-    @IBInspectable var rightRoundedCorner       : Bool          = false{
+    @IBInspectable var rightRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
-    @IBInspectable var bottomLeftRoundedCorner  : Bool          = false{
+    @IBInspectable var bottomLeftRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
-    @IBInspectable var bottomRightRoundedCorner : Bool          = false{
+    @IBInspectable var bottomRightRoundedCorner: Bool          = false {
         didSet {
             addMaskedCorners()
         }
     }
 
-    @IBInspectable var cornerRadius : CGFloat   = 0{
+    @IBInspectable var cornerRadius: CGFloat   = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             addMaskedCorners()
         }
     }
     
-    @IBInspectable var shadow : CGFloat   = 0 {
+    @IBInspectable var shadow: CGFloat   = 0 {
         didSet {
             self.layer.shadowRadius = shadow
             self.layer.shadowColor = UIColor.gray.cgColor
@@ -83,17 +82,13 @@ import QuartzCore
         if bottomLeftRoundedCorner {
             mask.insert(.layerMinXMaxYCorner)
         }
-        
-        
+                
         if bottomRightRoundedCorner {
             mask.insert(.layerMaxXMaxYCorner)
         }
         
-        if mask.isEmpty{
-            //self.layer.maskedCorners = nil
-        }else{
+        if !mask.isEmpty {
             self.layer.maskedCorners = mask
         }
     }
 }
-
