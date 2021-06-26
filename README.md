@@ -8,7 +8,7 @@
 
 Clone the repository:
 
-`git clone git@github.com:zelin/iOSArchitecture.git`
+`git clone https://github.com/zelin/iOSArchitecture.git`
 
 Install pods:
 
