@@ -38,7 +38,7 @@ A more detailed explanation is presented in (https://medium.com/tiendeo-tech/ios
 
 🍎 A coordinator is an object that bosses one or more view controllers around. Taking all of the driving logic out of your view controllers, and moving that stuff one layer up is gonna make your life a lot more awesome.
 
-A more detailed explanation is presented in (https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps) and [article2] (https://khanlou.com/2015/10/coordinators-redux/)
+A more detailed explanation is presented in (https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps) and (https://khanlou.com/2015/10/coordinators-redux/)
 
 ### Dependency Injection
 
@@ -58,6 +58,9 @@ Optimized the code for no memory leaks and low memory usage.
 
 ![Screenshot 1](./Screenshots/leaks.png)
 
+### Continuous Deployment (CD)
+
+Using fastlane for continuous deployment
 
 ## Author
 

@@ -1,0 +1,90 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+end
+
+default_platform :ios
+
+def project
+    './iOSArchitecture/iOSArchitecture.xcodeproj'
+end
+
+platform :ios do
+  version = nil
+  build_number = nil
+
+  before_all do
+
+    ENV["SLACK_URL"] = SLACK_HOOK_URL
+
+    ensure_git_status_clean
+    increment_build_number
+
+    version = get_version_number(xcodeproj: project)
+    build_number = get_build_number(xcodeproj: project)
+
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  lane :beta do
+
+    clean_build_artifacts
+    ensure_git_status_clean
+
+    build = increment_build_number(xcodeproj: project)
+    verify_xcode_version
+
+    complete_version = version_string(version, build)
+
+    build_app(workspace: "Dukkaani.xcworkspace", scheme: "Dukkaani")
+    upload_to_app_store
+
+  end
+
+  after_all do |lane|
+    
+    # git_add
+    commit_version_bump(
+      message: "Update version to #{complete_version}",
+      xcodeproj: project
+    )    
+    push_to_git_remote
+    clean_build_artifacts
+    reset_git_repo
+
+    slack(
+      message: "Successfully deployed update to iOSArchitecture"
+    )
+
+  end
+
+  error do |lane, exception|
+    clean_build_artifacts
+    reset_git_repo
+
+    slack(
+      message: exception.message,
+      success: false
+    )
+  end
+  
+end
