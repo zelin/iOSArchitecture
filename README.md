@@ -54,13 +54,13 @@ Swiftlint is available at (https://github.com/realm/SwiftLint).
 
 ### Memory Management
 
-Optimized the code for no memory leaks and low memory usage.
+⚡ Optimized the code for no memory leaks and low memory usage.
 
 ![Screenshot 1](./Screenshots/leaks.png)
 
 ### Continuous Deployment (CD)
 
-Using fastlane for continuous deployment
+🚗 Using fastlane for continuous deployment
 
 ## Author
 
